@@ -1,0 +1,19 @@
+---
+# tasks file for reboot
+#
+- name: Reboot system
+  shell: sleep 2 && shutdown -r now "Ansible triggered reboot"
+  async: 1
+  poll: 0
+  ignore_errors: true
+
+- name: Wait for the server to finish rebooting
+  wait_for: 
+    host: "{{ inventory_hostname }}" 
+    search_regex: OpenSSH 
+    port: 22 
+    timeout: 300 
+    delay: 10
+  delegate_to: localhost
+
+
