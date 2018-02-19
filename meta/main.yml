@@ -1,6 +1,6 @@
 galaxy_info:
   author: opuk
-  description: your description
+  description: a simple role that reboots a server
 
   # If the issue tracker for your role is not on github, uncomment the
   # next line and provide a value
