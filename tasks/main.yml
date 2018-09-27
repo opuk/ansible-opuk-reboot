@@ -9,7 +9,7 @@
 
 - name: Wait for the server to finish rebooting
   wait_for: 
-    host: "{{ inventory_hostname }}" 
+    host: "{{ ansible_host }}" 
     search_regex: OpenSSH 
     port: 22 
     timeout: 300 
